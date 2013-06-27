@@ -70,7 +70,7 @@ public class Tela_Update_Manga extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Adicionar Manga");
+        jLabel5.setText("Modificar Manga");
 
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +164,14 @@ public class Tela_Update_Manga extends javax.swing.JFrame {
             BackupNome = nome;
             
             if(Backup != null){
+                jTextField1.setText(BackupNome);
+                if(Backup.getVolume() != -1){
+                    jTextField2.setText(Integer.toString(Backup.getVolume()));
+                }else{
+                    jTextField2.setText("Especial");
+                }
+                jComboBox1.setSelectedIndex(Backup.getTipo());
+                jComboBox2.setSelectedIndex(Backup.getIdioma());
                 JOptionPane.showMessageDialog (null, "Pesquisa efetuada com sucesso", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             }
             

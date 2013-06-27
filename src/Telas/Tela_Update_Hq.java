@@ -56,7 +56,7 @@ public class Tela_Update_Hq extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Adicionar HQ");
+        jLabel5.setText("Modificar HQ");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Portugues", "Japonês", "Inglês", "Italiano", "Espanhol", "Holandês", "Francês" }));
 
@@ -145,7 +145,16 @@ public class Tela_Update_Hq extends javax.swing.JFrame {
             Backup = Controlador.PesquisarHqUpdate(nome, novo_volume);
             Backup_nome = nome;
             
+            
             if(Backup != null){
+                jTextField1.setText(Backup_nome);
+                if(Backup.getEdicao() != -1){
+                jTextField2.setText(Integer.toString(Backup.getEdicao()));
+                }
+                else{
+                    jTextField2.setText("Especial");
+                }
+                jComboBox2.setSelectedIndex(Backup.getIdioma());
                 JOptionPane.showMessageDialog (null, "Pesquisa efetuada com sucesso", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             }
 

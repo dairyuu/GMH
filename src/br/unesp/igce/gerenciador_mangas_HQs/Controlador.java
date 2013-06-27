@@ -19,10 +19,9 @@ public class Controlador {
     public static void AddManga(String nome,Fasciculo_Manga novo_volume){
         try{
             List<Manga> Manga_Lista;
-            SavePoint save = new SavePoint();
 
-            if(save.ExistManga()){
-                Manga_Lista = save.ReadManga();
+            if(SavePoint.ExistManga()){
+                Manga_Lista = SavePoint.ReadManga();
             }else{
                 Manga_Lista = new ArrayList<Manga>();
             }
@@ -66,7 +65,7 @@ public class Controlador {
                 JOptionPane.showMessageDialog(null, "Manga criado com sucesso", "Manga Criado", JOptionPane.INFORMATION_MESSAGE);
             }
 
-            save.SaveManga(Manga_Lista);
+            SavePoint.SaveManga(Manga_Lista);
         }
         catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog (null, "Erro: Volume Incompativel", "Erro", JOptionPane.ERROR_MESSAGE); 
@@ -76,10 +75,9 @@ public class Controlador {
     public static void AddHq(String nome,Fasciculo_HQ novo_volume){
         try{
             List<HQ> HQ_Lista;
-            SavePoint save = new SavePoint();
 
-            if(save.ExistHQ()){
-                HQ_Lista = save.ReadHQ();
+            if(SavePoint.ExistHQ()){
+                HQ_Lista = SavePoint.ReadHQ();
             }else{
                 HQ_Lista = new ArrayList<HQ>();
             }
@@ -122,7 +120,7 @@ public class Controlador {
                 JOptionPane.showMessageDialog(null, "HQ criado com sucesso", "HQ Criado", JOptionPane.INFORMATION_MESSAGE);
             }
 
-            save.SaveHQ(HQ_Lista);
+            SavePoint.SaveHQ(HQ_Lista);
         }
         catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog (null, "Erro: Volume Incompativel", "Erro", JOptionPane.ERROR_MESSAGE); 
@@ -131,10 +129,9 @@ public class Controlador {
     
     public static void DeletarColecaoHq(String nome){
         List<HQ> HQ_Lista;
-        SavePoint save = new SavePoint();
         
-        if(save.ExistHQ()){
-            HQ_Lista = save.ReadHQ();
+        if(SavePoint.ExistHQ()){
+            HQ_Lista = SavePoint.ReadHQ();
         }else{
             HQ_Lista = new ArrayList<HQ>();
         }
@@ -158,16 +155,15 @@ public class Controlador {
             JOptionPane.showMessageDialog(null, "HQ n?o existe", "Erro", JOptionPane.ERROR_MESSAGE);
         }
         
-        save.SaveHQ(HQ_Lista);
+        SavePoint.SaveHQ(HQ_Lista);
     }
     
     public static void DeletarColecaoManga(String nome){
         
         List<Manga> Manga_Lista;
-        SavePoint save = new SavePoint();
         
-        if(save.ExistManga()){
-            Manga_Lista = save.ReadManga();
+        if(SavePoint.ExistManga()){
+            Manga_Lista = SavePoint.ReadManga();
         }else{
             Manga_Lista = new ArrayList<Manga>();
         }
@@ -190,16 +186,15 @@ public class Controlador {
         }else{
             JOptionPane.showMessageDialog(null, "Manga n?o existe", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        save.SaveManga(Manga_Lista);
+        SavePoint.SaveManga(Manga_Lista);
     }
     
     public static void DeletarVolumeManga(String nome,Fasciculo_Manga novo_volume){
         try{
             List<Manga> Manga_Lista;
-            SavePoint save = new SavePoint();
 
-            if(save.ExistManga()){
-                Manga_Lista = save.ReadManga();
+            if(SavePoint.ExistManga()){
+                Manga_Lista = SavePoint.ReadManga();
             }else{
                 Manga_Lista = new ArrayList<Manga>();
             }
@@ -243,7 +238,7 @@ public class Controlador {
                 JOptionPane.showMessageDialog(null, "Manga n?o existe", "Erro", JOptionPane.ERROR_MESSAGE);
             }
 
-            save.SaveManga(Manga_Lista);
+            SavePoint.SaveManga(Manga_Lista);
         }
         catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog (null, "Erro: Volume Incompativel", "Erro", JOptionPane.ERROR_MESSAGE); 
@@ -253,10 +248,9 @@ public class Controlador {
     public static void DeletarVolumeHq(String nome,Fasciculo_HQ novo_volume){
         try{
             List<HQ> HQ_Lista;
-            SavePoint save = new SavePoint();
 
-            if(save.ExistHQ()){
-                HQ_Lista = save.ReadHQ();
+            if(SavePoint.ExistHQ()){
+                HQ_Lista = SavePoint.ReadHQ();
             }else{
                 HQ_Lista = new ArrayList<HQ>();
             }
@@ -298,7 +292,7 @@ public class Controlador {
                 JOptionPane.showMessageDialog(null, "HQ Inexistente", "Erro", JOptionPane.ERROR_MESSAGE);
             }
 
-            save.SaveHQ(HQ_Lista);
+            SavePoint.SaveHQ(HQ_Lista);
         }
         catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog (null, "Erro: Volume Incompativel", "Erro", JOptionPane.ERROR_MESSAGE); 
@@ -307,10 +301,9 @@ public class Controlador {
 
     public static DefaultListModel MostrarTodosMangas(){
         List<Manga> Manga_Lista;
-        SavePoint save = new SavePoint();
         
-        if(save.ExistManga()){
-            Manga_Lista = save.ReadManga();
+        if(SavePoint.ExistManga()){
+            Manga_Lista = SavePoint.ReadManga();
         }else{
             Manga_Lista = new ArrayList<Manga>();
         }
@@ -367,10 +360,9 @@ public class Controlador {
 
     public static DefaultListModel MostrarTodosHq(){
         List<HQ> HQ_Lista;
-        SavePoint save = new SavePoint();
         
-        if(save.ExistHQ()){
-            HQ_Lista = save.ReadHQ();
+        if(SavePoint.ExistHQ()){
+            HQ_Lista = SavePoint.ReadHQ();
         }else{
             HQ_Lista = new ArrayList<HQ>();
         }
@@ -419,10 +411,9 @@ public class Controlador {
 
     public static DefaultListModel PesquisarManga(String nome){
         List<Manga> Manga_Lista;
-        SavePoint save = new SavePoint();
         
-        if(save.ExistManga()){
-            Manga_Lista = save.ReadManga();
+        if(SavePoint.ExistManga()){
+            Manga_Lista = SavePoint.ReadManga();
         }else{
             Manga_Lista = new ArrayList<Manga>();
         }
@@ -499,10 +490,9 @@ public class Controlador {
     
     public static DefaultListModel PesquisarHq(String nome){
         List<HQ> HQ_Lista;
-        SavePoint save = new SavePoint();
         
-        if(save.ExistHQ()){
-            HQ_Lista = save.ReadHQ();
+        if(SavePoint.ExistHQ()){
+            HQ_Lista = SavePoint.ReadHQ();
         }else{
             HQ_Lista = new ArrayList<HQ>();
         }
@@ -572,10 +562,9 @@ public class Controlador {
     public static Fasciculo_Manga PesquisarMangaUpdate(String nome,Fasciculo_Manga novo_volume){
         try{
             List<Manga> Manga_Lista;
-            SavePoint save = new SavePoint();
 
-            if(save.ExistManga()){
-                Manga_Lista = save.ReadManga();
+            if(SavePoint.ExistManga()){
+                Manga_Lista = SavePoint.ReadManga();
             }else{
                 Manga_Lista = new ArrayList<Manga>();
             }
@@ -624,10 +613,9 @@ public class Controlador {
     public static Fasciculo_HQ PesquisarHqUpdate(String nome, Fasciculo_HQ novo_volume){
         try{
             List<HQ> HQ_Lista;
-            SavePoint save = new SavePoint();
 
-            if(save.ExistHQ()){
-                HQ_Lista = save.ReadHQ();
+            if(SavePoint.ExistHQ()){
+                HQ_Lista = SavePoint.ReadHQ();
             }else{
                 HQ_Lista = new ArrayList<HQ>();
             }
